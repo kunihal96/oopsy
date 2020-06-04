@@ -4,13 +4,15 @@ public static final int fulltime=1;
 public static final int parttime=2;
 public static final int emprate=20;
 public static final int num_of_days=20;
+public static final int max_hrs=100;
 public static void main(String []args)
 {
 int emphrs=0;
-int empwage=0;
-int totalwage=0;
+int total_emphrs=0;
+int total_workdays=0;
 System.out.println("welcome to employee wage computation");
-for (int day=0; day < num_of_days; day++ ) {
+while (total_emphrs <= max_hrs && total_workdays < num_of_days) {
+total_workdays++; 
 int emp=(int)Math.floor(Math.random() * 10 ) % 3;
 switch (emp) {
   case fulltime:
@@ -22,10 +24,10 @@ switch (emp) {
   default: 
          emphrs=0;
      }
-    empwage=emphrs*emprate;
-    totalwage+=empwage;
-   System.out.println("wage :" + empwage);
+    total_emphrs+=emphrs;
+   System.out.println("day is :" + total_workdays + "emp hours is :" + emphrs);
 }
-  System.out.println("totalwage :" + totalwage);
+  int totalempwage=total_emphrs * emprate;
+  System.out.println("totalwage :" + totalempwage);
 }
 }

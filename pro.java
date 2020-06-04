@@ -2,7 +2,24 @@ public class pro
 {
 public static final int fulltime=1;
 public static final int parttime=2;
-public static int comempwage(String comp,int emprate,int num_of_days,int max_hrs)
+
+private final String comp;
+private final int emprate;
+private final int num_of_days;
+private final int max_hrs;
+private int totalempwage;
+
+
+public pro(String comp,int emprate,int num_of_days,int max_hrs)
+{
+this.comp=comp;
+this.emprate=emprate;
+this.num_of_days=num_of_days;
+this.max_hrs=max_hrs;
+
+}
+
+public void comempwage()
 {
 int emphrs=0;
 int total_emphrs=0;
@@ -26,11 +43,19 @@ switch (emp) {
 }
   int totalempwage=total_emphrs * emprate;
   System.out.println("totalwage :" + totalempwage);
-   return totalempwage;
 }
-public static void main(String []args)
-{
-comempwage("dmart",20,20,100);
-comempwage("dmart",10,20,150);
+
+public String toString(){ 
+return "total wage for comp. is :" +comp + " " + totalempwage;
+}
+
+public static void main(String []args) {
+pro dmart=new pro("dmart",20,20,100); 
+pro reliance=new pro("reliance",10,20,150);
+dmart.comempwage();
+System.out.println(dmart);
+reliance.comempwage();
+System.out.println(reliance);
+
 }
 }

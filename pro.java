@@ -2,10 +2,7 @@ public class pro
 {
 public static final int fulltime=1;
 public static final int parttime=2;
-public static final int emprate=20;
-public static final int num_of_days=20;
-public static final int max_hrs=100;
-public void call()
+public static int comempwage(String comp,int emprate,int num_of_days,int max_hrs)
 {
 int emphrs=0;
 int total_emphrs=0;
@@ -29,10 +26,11 @@ switch (emp) {
 }
   int totalempwage=total_emphrs * emprate;
   System.out.println("totalwage :" + totalempwage);
+   return totalempwage;
 }
 public static void main(String []args)
 {
-pro emp=new pro();
-emp.call();
+comempwage("dmart",20,20,100);
+comempwage("dmart",10,20,150);
 }
 }

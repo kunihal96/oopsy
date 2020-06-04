@@ -1,26 +1,24 @@
 public class pro
 {
+public static final int fulltime=1;
+public static final int parttime=2;
+public static final int emprate=20;
 public static void main(String []args)
 {
-int fulltime=1;
-int parttime=2;
-int emprate=20;
 int emphrs=0;
 int empwage=0;
 System.out.println("welcome to employee wage computation");
-double emp=Math.floor(Math.random() * 10 ) % 2;
-if (emp==fulltime)
-      {
+int emp=(int)Math.floor(Math.random() * 10 ) % 3;
+switch (emp) {
+  case fulltime:
 	emphrs=8;
-	System.out.println("employee is present");
-      }
-else if (emp==parttime)
-        {
-         emphrs=4;
-        System.out.println("employee is absent");
-	}
-else
-     emphrs=0;
+	break;
+  case parttime:
+        emphrs=4;
+	break;
+  default: 
+         emphrs=0;
+     }
     empwage=emphrs*emprate;
    System.out.println("wage :" + empwage);
 }
